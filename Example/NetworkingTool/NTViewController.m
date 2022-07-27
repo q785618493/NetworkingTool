@@ -26,6 +26,11 @@
 - (void)createView {
     self.title = @"title";
     
+    [WYNetworkingTool GET:@"https://live.maozhuazb.com/Room/HotLiveApple?type=0&useridx=63092319&page=1" parameters:nil headers:nil isHeadersBool:false isHudBool:true success:^(id JSON) {
+        WY_LOG(@" 获取主播列表数据JSON == %@ ", [WYGeneralTools nativeDataParseJson:JSON]);
+    } failure:^(NSError *error) {
+        WY_LOG(@" 获取主播列表数据Error == %@ ", error);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

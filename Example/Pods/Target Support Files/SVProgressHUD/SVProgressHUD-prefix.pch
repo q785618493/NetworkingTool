@@ -10,9 +10,3 @@
 #endif
 #endif
 
-#import "WYGeneralTools.h"
-#import "WYNetworkingTool.h"
-
-FOUNDATION_EXPORT double NetworkingToolVersionNumber;
-FOUNDATION_EXPORT const unsigned char NetworkingToolVersionString[];
-
