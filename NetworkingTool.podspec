@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NetworkingTool'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = '封装AFNetworking Tool.'
 
 # This description is used to generate tags and improve search results.
