@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - NetworkingTool (1.0.0):
+  - NetworkingTool (1.0.1):
     - AFNetworking
     - SVProgressHUD
   - SVProgressHUD (2.2.5)
@@ -33,7 +33,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  NetworkingTool: 757351da531ba659c8885ac4cd1bb083bbbd7092
+  NetworkingTool: 3b48bfc8272d3927e268ce63281a1d3ef57b519c
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
 PODFILE CHECKSUM: 22b4ca049ce823dde3aebbab317f8c22abd16365
