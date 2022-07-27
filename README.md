@@ -1,13 +1,13 @@
 # NetworkingTool
 
-[![CI Status](https://img.shields.io/travis/785618493@qq.com/NetworkingTool.svg?style=flat)](https://travis-ci.org/785618493@qq.com/NetworkingTool)
+[![CI Status](https://img.shields.io/travis/q785618493/NetworkingTool.svg?style=flat)](https://travis-ci.org/q785618493/NetworkingTool)
 [![Version](https://img.shields.io/cocoapods/v/NetworkingTool.svg?style=flat)](https://cocoapods.org/pods/NetworkingTool)
 [![License](https://img.shields.io/cocoapods/l/NetworkingTool.svg?style=flat)](https://cocoapods.org/pods/NetworkingTool)
 [![Platform](https://img.shields.io/cocoapods/p/NetworkingTool.svg?style=flat)](https://cocoapods.org/pods/NetworkingTool)
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+封装AFNetworking Tool.
 
 ## Requirements
 
@@ -17,12 +17,13 @@ NetworkingTool is available through [CocoaPods](https://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'NetworkingTool'
+由于墙的原因，直接使用下面方式
+pod 'NetworkingTool', :git => 'https://github.com/q785618493/NetworkingTool.git'
 ```
 
 ## Author
 
-785618493@qq.com, 785618493@qq.com
+q785618493, 785618493@qq.com
 
 ## License
 

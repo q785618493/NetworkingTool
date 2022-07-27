@@ -8,20 +8,27 @@
 
 #import "NTViewController.h"
 
+#import "WYNetworkingTool.h"
+
 @interface NTViewController ()
 
 @end
 
 @implementation NTViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    [self createView];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)createView {
+    self.title = @"title";
+    
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
