@@ -94,11 +94,14 @@ NSString *const httpError = @"服务器或网络异常,请稍后重试!";
 
 @end
 
+static WYHttpToolSessionManager *manager;
+
+static dispatch_once_t onceToken;
+
 @implementation WYHttpToolSessionManager
 
 + (instancetype)sharedHttpToolSessionManager {
-    static WYHttpToolSessionManager *manager;
-    static dispatch_once_t onceToken;
+    
     dispatch_once(&onceToken, ^{
         manager = [[WYHttpToolSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_DOMAIN_URL]];
         manager.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
@@ -124,6 +127,22 @@ NSString *const httpError = @"服务器或网络异常,请稍后重试!";
         [manager.requestSerializer setValue:CLIENT_CODE forHTTPHeaderField:@"clientCode"];
     });
     return manager;
+}
+
+#pragma mark 销毁单例
++ (void)tearDownSessionManager {
+    onceToken = 0;
+    manager = nil;
+}
+
+#pragma mark - 取消所有进行中的请求
++ (void)cancelAllRequest {
+    WYHttpToolSessionManager *manager = [WYHttpToolSessionManager sharedHttpToolSessionManager];
+    [manager.operationQueue cancelAllOperations];
+    if (manager.tasks.count) {
+        [manager.tasks makeObjectsPerformSelector:@selector(cancel)];
+//        [manager invalidateSessionCancelingTasks:true];
+    }
 }
 
 @end

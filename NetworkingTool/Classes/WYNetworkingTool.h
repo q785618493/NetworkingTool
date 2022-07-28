@@ -52,7 +52,14 @@
 
 @interface WYHttpToolSessionManager : AFHTTPSessionManager
 
+/// 创建单例
 + (instancetype)sharedHttpToolSessionManager;
+
+/// 销毁单例
++ (void)tearDownSessionManager;
+
+/// 取消所有进行中的请求
++ (void)cancelAllRequest;
 
 @end
 
