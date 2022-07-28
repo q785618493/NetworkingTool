@@ -7,7 +7,7 @@
 
 ## Example
 
-封装AFNetworking Tool.
+封装AFNetworking通用Tool.
 
 ## Requirements
 
