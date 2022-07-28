@@ -12,6 +12,8 @@
 
 @interface NTViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+
 @end
 
 @implementation NTViewController
@@ -26,10 +28,14 @@
 - (void)createView {
     self.title = @"title";
     
+    __weak typeof(self) ws = self;
     [WYNetworkingTool GET:@"https://live.maozhuazb.com/Room/HotLiveApple?type=0&useridx=63092319&page=1" parameters:nil headers:nil isHeadersBool:false isHudBool:true success:^(id JSON) {
-        WY_LOG(@" 获取主播列表数据JSON == %@ ", [WYGeneralTools nativeDataParseJson:JSON]);
+        NSString *dataString = [WYGeneralTools nativeDataParseJson:JSON];
+        WY_LOG(@" 获取主播列表数据JSON == %@ ", dataString);
+        ws.textView.text = dataString;
     } failure:^(NSError *error) {
         WY_LOG(@" 获取主播列表数据Error == %@ ", error);
+        ws.textView.text = error.localizedDescription;
     }];
 }
 
