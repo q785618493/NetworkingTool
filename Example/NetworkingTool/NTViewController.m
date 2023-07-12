@@ -37,6 +37,16 @@
         WY_LOG(@" 获取主播列表数据Error == %@ ", error);
         ws.textView.text = error.localizedDescription;
     }];
+    
+    NSDictionary *dict = @{@"token":@"81971235-56d5-429e-8cf8-58c9db2868de", @"group_id":@"0"};
+    
+    [WYNetworkingTool POST:@"http://ardesign.api.test.armetacube.com/api/Space/index" parameters:dict headers:nil isHeadersBool:false isHudBool:true success:^(id JSON) {
+        
+        WY_LOG(@"数据JSON==%@", JSON);
+        
+    } failure:^(NSError *error) {
+        WY_LOG(@"错误==%@", error.localizedDescription);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
